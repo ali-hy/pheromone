@@ -1,0 +1,333 @@
+/* -------------- Universal stuff --------------- */
+:root{
+    --accent-color: #d4bf9b;
+}
+
+.columns-3{
+    /* column-count: 3 !important; */
+    left: -20vh;
+}
+
+.fs-7{
+    font-size: 8pt;
+}
+
+/* body{
+
+} */
+section{
+    height: 100vh;
+}
+li.nav-item{
+    list-style-type: none;
+}
+
+.bg-darkslateblue{
+    background-color: rgba(18, 15, 23, var(--bs-bg-opacity));
+}
+.show{
+    display: block;
+}
+
+
+/* -------- Dropdowns --------- */
+.dropdown-menu{
+    column-count: 1;
+    overflow: hidden;
+    height: 0;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    font-size: smaller;
+    padding: 0;
+    transition-property: height;
+    transition-duration: 0.5s;
+}
+.dropdown.active .dropdown-menu{
+    height: fit-content;
+}
+.dropdown.active .dropdown-toggle{
+    color: var(--accent-color);
+}
+.dropdown-menu *{
+    background: none !important;
+    color: white !important;
+}
+
+.dropdown:not(.shopping-dropdown) .dropdown-menu{
+    display: block;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+
+    --dropdown-arrow-size: .4em;
+    width: var(--dropdown-arrow-size);
+    height: var(--dropdown-arrow-size);
+    margin: -.5em 0 0 .4em;
+    vertical-align: middle;
+    content: "";
+    border: .3em solid;
+    border-width: 0 1px 1px 0;
+    transform: rotateZ(45deg);
+}
+
+/* ----- shopping dropdown ----- */
+
+.shopping-dropdown{
+    z-index: 1;
+}
+.shopping-dropdown .dropdown-menu{
+    position: absolute;
+    display: block;
+
+    right: 0;
+    z-index: -1;
+
+    height: auto;
+
+    padding: 20px;
+    text-align: left;
+
+    background-color: white;
+    border-radius: 0;
+    opacity: 0;
+    transition-property: opacity, margin-top;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    margin-top: -40px;
+
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
+.shopping-dropdown.active .dropdown-menu{
+    opacity: 1;
+    z-index: 10;
+
+    margin-top: 0px;
+}
+.shopping-dropdown.active .dropdown-menu *{
+    color: #444 !important;
+}
+
+/* -------------- NAVBAR ---------------- */
+.navbar{
+    text-transform: uppercase;
+}
+
+.navbar-brand img{
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-link{
+    color: white;
+    padding: 0;
+    font-size: 14pt;
+    text-align: center !important;
+    cursor: pointer;
+
+    --bs-navbar-nav-link-padding-y: 10px;
+    padding: var(--bs-navbar-nav-link-padding-y) var(--bs-navbar-nav-link-padding-x);
+}
+.navlink, .nav-link:hover, .nav-link:focus{
+    color: white;
+}
+
+.navbar-toggler{
+    z-index: 10000;
+    color: black;
+    opacity: 1;
+    outline: none !important;
+}
+.navbar-toggler,
+.navbar-toggler:active,
+.navbar-toggler:focus{
+    border:none;
+    box-shadow: none;
+}
+.navbar-nav{
+    width: fit-content;
+    padding-top: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.shopping-icon, .search-icon{
+    display: none;
+    --bs-navbar-nav-link-padding-y: 40px;
+    --bs-navbar-nav-link-padding-x: 15px;
+}
+.shopping-icon::after{
+    display: block;
+
+    content: attr(data-cart-item-count);
+    background-color: var(--accent-color);
+    position: absolute;
+    
+    --item-count-size: 17px;
+    right: 5px;
+    width: var(--item-count-size);
+    height: var(--item-count-size);
+    border: none;
+    border-width: 0;
+    border-radius: 100%;
+    transform: translate(0px, -10px);
+
+    font-size: 8pt;
+    /* vertical-align: middle; */
+    line-height: var(--item-count-size);
+}
+
+.collapse.navbar-collapse{
+    display: none;
+    justify-content: center;
+    align-content: center;
+    overflow: auto;
+
+    background: rgb(0 0 0 / 0.75);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.collapse.navbar-collapse.show{
+    z-index: 9900;
+    display: flex !important;
+}
+.navbar{
+    --navbar-transition-duration: 1s;
+    transition: var(--navbar-transition-duration);
+}
+.navbar.scrolled-navbar{
+    padding: 0;
+    background-color: white !important;
+}
+.navbar.scrolled-navbar .navbar-nav{
+    padding-top: 0;
+}
+.navbar.scrolled-navbar .nav-icon {
+    --bs-navbar-nav-link-padding-y:25px;
+    color: black !important;
+    transition: var(--navbar-transition-duration);
+}
+
+/* -------------- CAROUSEL ------------------ */
+
+.carousel-inner{
+    height: 100vh;
+}
+.carousel-item>div{
+    background-position: center;
+    background-size: cover;
+}
+
+.carousel-indicators li{
+    --indicator-size: 17px;
+    width: var(--indicator-size) !important;
+    height: calc(var(--indicator-size) - 1px) !important;
+    border-radius: 100%;
+    background-color: lightgray !important;
+    margin-right: 0;
+    margin-left: 0;
+}
+.carousel-indicators{
+    gap: 5px;
+}
+
+.fill{
+    width: 100%;
+    height: 100%;
+}
+
+@media(width >= 576px){
+    .shopping-icon, .search-icon{
+        display: block;
+    }
+}
+
+@media(width >= 992px){
+    /* ----------- dropdowns ------------ */
+    .dropdown-menu{
+        z-index: -1;
+        display: block;
+
+        height: auto;
+
+        padding: 20px;
+        text-align: left;
+
+        background-color: white;
+        border-radius: 0;
+        opacity: 0;
+        transition-property: opacity, margin-top;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
+        margin-top: -40px;
+
+        box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.3);
+    }
+    .dropdown-menu *{
+        color: #444 !important;
+    }
+    .dropdown-header{
+        font-weight: bold;
+    } 
+    .dropdown-item, .dropdown-header{
+        padding: 10px 10px;
+    }
+    /* DROPDOWN MENU POINTER  ------------------*/
+    /* .dropdown-menu::before{
+        display: block;
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 15%;
+        
+
+        width: 8px;
+
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+        border-bottom: 8px solid white;
+    } */
+    .dropdown:not(.active) .dropdown-item{
+        cursor: default;
+    }
+    .dropdown.active .dropdown-menu{
+        opacity: 1;
+        z-index: 10;
+
+        margin-top: 0px;
+    }
+    .dropdown-item:hover{
+        background-color: #f7f7f7 !important;
+    }
+    .navbar.navbar-expand-lg .dropdown-menu.columns-3{
+        column-count: 3 !important;
+    }
+    /* -------------- navbar ----------------- */
+    .nav-link{
+        font-size: 9pt;
+        transition: var(--navbar-transition-duration);
+        --bs-navbar-nav-link-padding-y: 40px;
+        --bs-navbar-nav-link-padding-x: 15px;
+        padding: var(--bs-navbar-nav-link-padding-y) var(--bs-navbar-nav-link-padding-x);
+    }
+    .navbar.scrolled-navbar .nav-link {
+        --bs-navbar-nav-link-padding-y:25px;
+        color: black !important;
+        transition: var(--navbar-transition-duration);
+    }
+    .collapse.navbar-collapse{
+        position: relative;
+        justify-content: end;
+
+        background: none;
+        width: fit-content;
+        height: fit-content;
+
+        overflow:   visible;
+    }
+}
