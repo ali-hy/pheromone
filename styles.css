@@ -40,8 +40,6 @@ li.nav-item{
     text-align: center;
     font-size: smaller;
     padding: 0;
-    transition-property: height;
-    transition-duration: 0.5s;
 }
 .dropdown.active .dropdown-menu{
     height: fit-content;
@@ -79,10 +77,7 @@ li.nav-item{
 }
 .shopping-dropdown .dropdown-menu{
     position: absolute;
-    display: block;
-
     right: 0;
-    z-index: -1;
 
     height: auto;
 
@@ -91,19 +86,14 @@ li.nav-item{
 
     background-color: white;
     border-radius: 0;
-    opacity: 0;
-    transition-property: opacity, margin-top;
-    transition-duration: 0.5s;
-    transition-timing-function: ease-out;
-    margin-top: -40px;
 
     box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.3);
 }
 .shopping-dropdown.active .dropdown-menu{
-    opacity: 1;
-    z-index: 10;
-
-    margin-top: 0px;
+    animation: 0.5s ease dropdown-float-in;
+}
+.shopping-dropdown:not(.active) .dropdown-menu{
+    animation: 0.5s ease forwards dropdown-float-out;
 }
 .shopping-dropdown.active .dropdown-menu *{
     color: #444 !important;
@@ -175,7 +165,6 @@ li.nav-item{
     transform: translate(0px, -10px);
 
     font-size: 8pt;
-    /* vertical-align: middle; */
     line-height: var(--item-count-size);
 }
 
@@ -249,10 +238,8 @@ li.nav-item{
 
 @media(width >= 992px){
     /* ----------- dropdowns ------------ */
-    .dropdown-menu{
-        z-index: -1;
-        display: block;
-
+    li.dropdown ul.dropdown-menu{
+        /* display: none !important; */
         height: auto;
 
         padding: 20px;
@@ -260,11 +247,6 @@ li.nav-item{
 
         background-color: white;
         border-radius: 0;
-        opacity: 0;
-        transition-property: opacity, margin-top;
-        transition-duration: 0.5s;
-        transition-timing-function: ease-out;
-        margin-top: -40px;
 
         box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.3);
     }
@@ -277,29 +259,17 @@ li.nav-item{
     .dropdown-item, .dropdown-header{
         padding: 10px 10px;
     }
-    /* DROPDOWN MENU POINTER  ------------------*/
-    /* .dropdown-menu::before{
-        display: block;
-        content: "";
-        position: absolute;
-        top: -8px;
-        left: 15%;
-        
-
-        width: 8px;
-
-        border-right: 8px solid transparent;
-        border-left: 8px solid transparent;
-        border-bottom: 8px solid white;
-    } */
     .dropdown:not(.active) .dropdown-item{
         cursor: default;
     }
     .dropdown.active .dropdown-menu{
-        opacity: 1;
-        z-index: 10;
-
-        margin-top: 0px;
+        animation-name: dropdown-float-in;
+        animation-duration: 0.5s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+    }
+    .dropdown:not(.active) .dropdown-menu{
+        animation: 0.5s ease forwards dropdown-float-out;
     }
     .dropdown-item:hover{
         background-color: #f7f7f7 !important;
