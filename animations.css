@@ -1,3 +1,4 @@
+/* ---- FADE ---- */
 @keyframes fade-in {
     0%{
         opacity: 0;
@@ -8,13 +9,16 @@
 }
 @keyframes fade-out {
     0%{
+        display:block;
         opacity: 1;
     }
     100%{
         opacity: 0;
     }
 }
-@keyframes dropdown-float-in {
+/* ---- FLOAT ---- */
+/* float in */
+@keyframes float-in-above {
     0%{
         display: block;
         opacity: 0;
@@ -25,7 +29,38 @@
         margin-top: 0;
     }
 }
-@keyframes dropdown-float-out {
+@keyframes float-in-below {
+    0%{
+        opacity: 0;
+        margin-top: 40px;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+@keyframes float-in-right {
+    0%{
+        opacity: 0;
+        margin-left: 100px;
+    }
+    100%{
+        opacity: 1;
+        margin-left: 0;
+    }
+}
+@keyframes float-in-left {
+    0%{
+        opacity: 0;
+        margin-right: 240px;
+    }
+    100%{
+        opacity: 1;
+        margin-right: 40px;
+    }
+}
+/* float out */
+@keyframes float-out-above {
     0%{
         display: block;
         opacity: 1;
@@ -37,10 +72,46 @@
     }
     100%{
         opacity: 0;
-        visibility: none;
     }
 }
 
-/* .float-in{
-    animation: 0.5s ease dropdown-float-in;
-} */
+/* ---- SLIDE ---- */
+/* slide in */
+@keyframes slide-in-bottom {
+    0%{
+        opacity: 0;
+        margin-top: 100px;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+.fade-out{
+    animation: 0.5s linear fade-out !important;
+}
+.float-in-above{
+    animation: 1s ease float-in-above !important;
+}
+.slide-in-bottom{
+    animation: 1s ease slide-in-bottom !important;
+}
+
+/* --------SPECIFIC---------- */
+@keyframes mouse-tracker-animation {
+    0%{
+        margin-top: 0px;
+    }
+    40%{
+        margin-top: 20px;
+        opacity: 1;
+    }
+    70%{
+        opacity: 0;
+    }
+    100%{
+        margin-top: 20px;
+        opacity: 0;
+    }
+}

@@ -13,8 +13,8 @@ const onDropdownMenuAnimationEnd = (_event) => {
      * @type {HTMLElement}
      */
     const target = _event.target;
-    if (_event.animationName === "dropdown-float-out") {
-        target.style.display="none";
+    if (_event.animationName === "float-out-above") {
+        target.classList.add("d-none")
     }
 };
 
@@ -22,15 +22,14 @@ const onDropdownMenuAnimationEnd = (_event) => {
  * @param {MouseEvent} _event 
  */
 const showDropdownMenu = (_event) => {
-    console.log("mouse is entering");
     const target = _event.target;
     const dropdown = target.parentElement;
-    const menu = dropdown.querySelector(".dropdown-menu");
+    const menu = dropdown.querySelector(".dropdown-menu");  
     
     dropdowns.forEach(element => {
         element.classList.remove("active");
     })
-    menu.style.display = "block";
+    menu.classList.remove("d-none");
     dropdown.classList.add("active");
 }
 const hideDropdownMenuOnMouseLeave = (_event) => {
@@ -66,8 +65,10 @@ const respondToSize = e => {
         dropdowns.forEach((element) => {
             element.removeEventListener("mouseleave", hideDropdownMenuOnMouseLeave)
         })
-        dropdownMenus.forEach((element) => {
-            element.style.display = "block";
+        dropdownMenus.forEach((menu) => {
+            if(!menu.parentElement.classList.contains("shopping-dropdown")){
+                menu.classList.remove("d-none");
+            }
         })
     } else {
         dropdownTogglers.forEach((element) => {
@@ -77,14 +78,14 @@ const respondToSize = e => {
         dropdowns.forEach((element) => {
             element.addEventListener("mouseleave", hideDropdownMenuOnMouseLeave)
         })
-        dropdownMenus.forEach((element) => {
-            element.style.display = "none";
+        dropdownMenus.forEach((menu) => {
+            menu.classList.add("d-none");
         })
     }
 }
 
 dropdownMenus.forEach(menu => {
-    // menu.classList.add("d-none");
+    menu.classList.add("d-none");
     menu.addEventListener("animationend", onDropdownMenuAnimationEnd)
 })
 

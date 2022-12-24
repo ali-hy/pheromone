@@ -2,6 +2,16 @@ const carouselPrevControls = document.querySelectorAll(".carousel-control-prev")
 const carouselNextControls = document.querySelectorAll(".carousel-control-next");
 
 /**
+ * @param {AnimationEvent} _event 
+ */
+const onSlideFadeout = (_event) => {
+    if(_event.animationName === "fade-out"){
+        _event.target.classList.remove("active");
+        _event.target.classList.remove("fade-out");
+    }
+}
+
+/**
  * @param {HTMLButtonElement} controlIcon 
  */
 const getControlCarousel = controlIcon => {
@@ -79,16 +89,21 @@ const backwardsLoop = (current, min, max) => {
     return maxFrom0 - 1 - ((maxFrom0 - currentFrom0) % maxFrom0) + min;
 }
 
+const forwardsLoop = (current, max) => {
+    return (current + 1) % max;
+}
+
 /**
  * @param {HTMLCollection} carouselSlides
  * @param {number} slideToActivate
  */
 const setActiveSlide = (carouselSlides, slideToActivate) => {
+    const currentSlide = getCurrentSlide(carouselSlides);
     for(let i = 0; i < carouselSlides.length; i++){
         if(i === slideToActivate){
-            carouselSlides.item(i).classList.add("active")
-        } else {
-            carouselSlides.item(i).classList.remove("active");
+            carouselSlides.item(i).classList.add("active");
+        } else if (carouselSlides.item(i).classList.contains("active")) {
+            carouselSlides.item(i).classList.add("fade-out");
         }
     }
 }
@@ -108,9 +123,12 @@ const onPrevControlClicked = _event => {
     setActiveSlide(slides, getPreviousSlideNumber(slides));
 }
 
-console.log(carouselNextControls)
 carouselNextControls.forEach(controller => {
     controller.addEventListener("click", onNextControlClicked);
+    const carouselSlides = getCarouselSlides(getControlCarousel(controller));
+    for(let slide of carouselSlides){
+        slide.addEventListener("animationend", onSlideFadeout);
+    }
 })
 carouselPrevControls.forEach(controller => {
     controller.addEventListener("click", onPrevControlClicked);
