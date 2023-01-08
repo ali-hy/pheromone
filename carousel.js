@@ -1,29 +1,84 @@
-const carouselPrevControls = document.querySelectorAll(".carousel-control-prev");
-const carouselNextControls = document.querySelectorAll(".carousel-control-next");
+const prevControls = document.querySelectorAll(".carousel-control-prev");
+const nextControls = document.querySelectorAll(".carousel-control-next");
+
+const carouselSlides = document.querySelectorAll(".carousel-item");
+const indicatorLists = document.querySelectorAll(".carousel-indicators");
 
 /**
- * @param {AnimationEvent} _event 
+ * @param {HTMLElement} carousel 
  */
-const onSlideFadeout = (_event) => {
-    if(_event.animationName === "fade-out"){
-        _event.target.classList.remove("active");
-        _event.target.classList.remove("fade-out");
+const getIndicatorListFromCarousel = carousel => {
+    return carousel.querySelector("ol.carousel-indicators");
+}
+
+/**
+ * @param {HTMLAnchorElement} control
+ */
+const getIndicatorsFromControl = control => {
+    return getIndicatorListFromCarousel(getCarouselFromControl(control));
+}
+
+/**
+ * @param {HTMLCollection} slides 
+ */
+const getIndicatorListFromSlides = slides => {
+    return getIndicatorListFromCarousel((getCarouselFromSlides(slides)));
+}
+
+/**
+ * @param {HTMLOListElement} indicatorList
+ * @param {number} indicatorToActivate 
+ */
+const setActiveIndicator = (indicatorList, indicatorToActivate) => {
+    for(let i = 0; i < indicatorList.childElementCount; i++){
+        /**
+         * @type {HTMLLIElement}
+         */
+        const indicator = indicatorList.children.item(i);
+        
+        if(i === indicatorToActivate){
+            indicator.classList.add("active")
+        }else if(indicator.classList.contains("active")){
+            indicator.classList.remove("active");
+        }
     }
+}
+
+/**
+ * @param {HTMLOListElement} indicatorList 
+ */
+const getCarouselFromIndicatorList = indicatorList => {
+    return indicatorList.parentElement;
+}
+
+/**
+ * @param {HTMLOListElement} indicatorList 
+ */
+const getSlidesFromIndicatorList = indicatorList => {
+    return getSlidesFromCarousel(getCarouselFromIndicatorList(indicatorList))
 }
 
 /**
  * @param {HTMLButtonElement} controlIcon 
  */
-const getControlCarousel = controlIcon => {
+const getCarouselFromControl = controlIcon => {
     return document.querySelector(controlIcon.dataset.bsTarget);
 }
 
 /**
  * @param {HTMLElement} carousel 
  */
-const getCarouselSlides = carousel => {
+const getSlidesFromCarousel = carousel => {
     const carouselInner = carousel.querySelector(".carousel-inner");
     return carouselInner.children;
+}
+
+/**
+ * @param {HTMLCollection} carouselSlides 
+ */
+const getCarouselFromSlides = carouselSlides => {
+    const firstSlide = carouselSlides.item(0);
+    return firstSlide.parentElement.parentElement;
 }
 
 /**
@@ -98,7 +153,6 @@ const forwardsLoop = (current, max) => {
  * @param {number} slideToActivate
  */
 const setActiveSlide = (carouselSlides, slideToActivate) => {
-    const currentSlide = getCurrentSlide(carouselSlides);
     for(let i = 0; i < carouselSlides.length; i++){
         if(i === slideToActivate){
             carouselSlides.item(i).classList.add("active");
@@ -106,32 +160,54 @@ const setActiveSlide = (carouselSlides, slideToActivate) => {
             carouselSlides.item(i).classList.add("fade-out");
         }
     }
+    const indicatorCollection = getIndicatorListFromSlides(carouselSlides);
+    setActiveIndicator(indicatorCollection, slideToActivate);
 }
 
 /**
  * @param {MouseEvent} _event 
  */
 const onNextControlClicked = _event => {
-    const slides = getCarouselSlides(getControlCarousel(_event.target));
+    const slides = getSlidesFromCarousel(getCarouselFromControl(_event.target));
     setActiveSlide(slides, getNextSlideNumber(slides));
 }
 /**
  * @param {MouseEvent} _event 
  */
 const onPrevControlClicked = _event => {
-    const slides = getCarouselSlides(getControlCarousel(_event.target));
+    const slides = getSlidesFromCarousel(getCarouselFromControl(_event.target));
     setActiveSlide(slides, getPreviousSlideNumber(slides));
 }
 
-carouselNextControls.forEach(controller => {
+
+/**
+ * @param {AnimationEvent} _event 
+ */
+const onSlideFadeout = (_event) => {
+    if(_event.animationName === "fade-out"){
+        _event.target.classList.remove("active");
+        _event.target.classList.remove("fade-out");
+    }
+}
+
+nextControls.forEach(controller => {
     controller.addEventListener("click", onNextControlClicked);
-    const carouselSlides = getCarouselSlides(getControlCarousel(controller));
-    for(let slide of carouselSlides){
-        slide.addEventListener("animationend", onSlideFadeout);
+})
+prevControls.forEach(controller => {
+    controller.addEventListener("click", onPrevControlClicked);
+})
+
+indicatorLists.forEach(indicatorList => {
+    const indicators = indicatorList.children;
+    for(let indicator of indicators){
+        indicator.addEventListener("click", _event => {
+            setActiveSlide(getSlidesFromIndicatorList(indicatorList), Number(indicator.dataset.bsSlideTo));
+        })
     }
 })
-carouselPrevControls.forEach(controller => {
-    controller.addEventListener("click", onPrevControlClicked);
+
+carouselSlides.forEach(slide => {
+    slide.addEventListener("animationend", onSlideFadeout);
 })
 
 const activeSlide = 0;

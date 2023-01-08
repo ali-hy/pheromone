@@ -1,6 +1,10 @@
 /* -------------- Universal stuff --------------- */
 :root{
+    --kanit-font-family: Kanit, "Open sans", Roboto, arial, sans-serif;
+
     --accent-color: #d4bf9b;
+    --text-gray: #555;
+    --gray-bg: #f4f4f4;
 }
 
 .columns-3{
@@ -16,17 +20,55 @@
     font-size: 8pt;
 }
 
-h1.cursive{
+.cursive{
+    font-size: 20pt;
     font-family: "Great Vibes", cursive;
+}
+h2{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+    font-size: 24px;
+    margin-bottom: 12pt;
+    color: var(--text-gray);
 }
 h3{
     font-weight: 300;
 }
-
-html {
-    font: "Open sans", Roboto, arial, sans-serif;
+h4{
+    font-family: var(--kanit-font-family);
+    font-size: 18px;
+    font-weight: 300;
+    margin: 20px 0;
 }
+p{
+    font-weight: 200;
+    padding: 8pt 0;
+}
+.rotate-4deg{
+    transform: rotate(-4deg);
+}
+.percentage::after{
+    content: "%";
+}
+
+html, body {
+    font-family: Kanit, "Open sans", Roboto, arial, sans-serif;
+}
+
 section{
+    position: relative;
+    min-height: 50vh;
+}
+section:not(.carousel){
+    padding: 10vh 0;
+    color: var(--text-gray)
+}
+section:nth-child(even){
+    background: var(--gray-bg);
+}
+
+section.carousel{
     height: 100vh;
 }
 
@@ -47,17 +89,49 @@ a{
     cursor: pointer;
 }
 
-.white-button, .white-button:hover{
+[class*="button"]{
     --button-color: white;
-    border: solid 2px var(--button-color);
+    --button-hover-color: var(--button-color);
+    --font-color: black;
+    --font-hover-color: var(--font-color);
+
     background: var(--button-color);
-    color:black
+
+    color:var(--font-color);
+    text-transform: uppercase;
+
+    transition-duration: 0.5s;
+}
+[class*="button"]:not(.slide-button){
+    letter-spacing: 2px;
+    font-size: 12px;
+    padding: 8px 30px;
+}
+.black-button:not(.slide-button):hover{
+    background-color: #555;
+}
+
+[class*="button"]:hover{
+    background-color: var(--button-hover-color);
+    color: var(--font-hover-color);
+}
+
+.black-button{
+    --button-color: black;
+    --font-color: white;
+}
+
+.white-button{
+    --button-color: white;
+    --font-color: black;
 }
 
 .outline-button, .outline-button:hover{
     color: var(--button-color);
+    border: solid 2px var(--button-color);
     background: none;
 }
+
 .play-icon-container{
     --icon-size: 29px;
     --icon-scale: 2;
@@ -217,13 +291,20 @@ a{
     animation: 0.5s ease forwards float-out-above;
 }
 .shopping-dropdown .dropdown-menu *{
-    color: #444 !important;
+    color: var(--text-gray) !important;
 }
 
 /* -------------- NAVBAR ---------------- */
 .navbar{
+    --navbar-transition-duration: 1s;
+    transition: var(--navbar-transition-duration);
+}
+
+.navbar-nav{
+    font-family: "Open sans", Kanit, Roboto, arial, sans-serif;
+    --bs-nav-link-font-weight: normal;
     text-transform: uppercase;
-    border-bottom: solid 1px #ddd;
+    transition: var(--navbar-transition-duration);
 }
 
 .navbar-brand img{
@@ -243,7 +324,7 @@ a{
     --bs-navbar-nav-link-padding-y: 10px;
     padding: var(--bs-navbar-nav-link-padding-y) var(--bs-navbar-nav-link-padding-x);
 }
-.navlink, .nav-link:hover, .nav-link:focus{
+.nav-link, .nav-link:hover, .nav-link:focus{
     color: white;
 }
 
@@ -307,13 +388,10 @@ a{
     z-index: 9900;
     display: flex !important;
 }
-.navbar{
-    --navbar-transition-duration: 1s;
-    transition: var(--navbar-transition-duration);
-}
 .navbar.scrolled-navbar{
     padding: 0;
     background-color: white !important;
+    border-bottom: solid 1px #ddd;
 }
 .navbar.scrolled-navbar .navbar-nav{
     padding-top: 0;
@@ -325,11 +403,10 @@ a{
 }
 
 /* -------------- CAROUSEL ------------------ */
-
-.carousel-inner{
+section.carousel .carousel-inner{
     height: 100vh;
 }
-.carousel-item>div{
+section.carousel .carousel-item>div{
     background-position: center;
     background-size: cover;
 }
@@ -390,10 +467,88 @@ a{
     animation: 1s ease float-in-left;
 }
 
+/* ------ ABOUT US SECTION ------ */
+.skill-levels-container{
+    text-align: center;
+}
+.progress-circle{
+    display: inline-block;
+    width: 150px;
+    margin: 0 auto;
+}
+.circle{
+    position: relative;
+}
+.progress-circle .skill-name{
+    text-align: center;
+    font-weight: 200;
+}
+.progress-circle .circle .percentage{
+    position: absolute;
 
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+/* ---- Modern Portfolio section ---- */
+#modern-portfolio-section{
+    
+}
+
+#monitor-carousel{
+    margin-top: 30px;
+}
+#monitor-carousel img{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
+}
+#monitor-carousel .carousel-indicators{
+    margin-bottom: 0;
+    bottom: -40px;
+}
+#monitor-carousel .carousel-indicators li{
+    background-color: #444 !important;
+}
+
+/* ---- Our services section ---- */
+#our-services-section p.this-section{
+    max-width: 800px;
+}
+
+.service-card{
+    text-align: center;
+}
+
+.service-card ion-icon{
+    font-size: 100px;
+    margin: auto;
+}
+
+#services-2{
+  color: white;
+}
+
+#services-2 img.bg-img{
+  position:absolute;
+  top: -90%;
+  left: -69%;
+  filter: brightness(30%);
+}
+
+#services-2 .container *{
+  position: relative;
+  z-index: 10;
+}
+
+/* ---- RESPONSIVE STUFF ---- */
 @media(width >= 576px){
     .shopping-icon, .search-icon{
-        display: block;
+      display: block;
     }
 }
 
@@ -412,7 +567,7 @@ a{
         box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.3);
     }
     .dropdown-menu *{
-        color: #444 !important;
+        color: var(--text-gray) !important;
     }
     .dropdown-header{
         font-weight: bold;
@@ -460,5 +615,20 @@ a{
         height: fit-content;
 
         overflow:   visible;
+    }
+
+    #about-us-section{
+        padding-bottom: 15vh;
+    }
+
+    #monitor-carousel{
+        margin-top: -25vh;
+    }
+    #monitor-carousel .carousel-indicators{
+        margin-bottom: 0;
+        bottom: 0px;
+    }
+    #monitor-carousel img{
+        max-width: 456px;
     }
 }
