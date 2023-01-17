@@ -1,327 +1,1257 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pheromone</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <style> @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kanit:wght@200;300;400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap'); </style>
-    <link rel="stylesheet" href="animations.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-transparent navbar-dark ">
-        <div class="container justify-content-between align-items-center">
-            <a href="#" class="navbar-brand">
-                <img id="logo-light" class="navbar-logo" src="https://wordpress.dankov-themes.com/pheromone/wp-content/themes/pheromone/assets/images/logo@2x.png" alt="Pheromone">
-                <img id="logo-dark" class="navbar-logo opacity-0" src="https://wordpress.dankov-themes.com/pheromone/wp-content/themes/pheromone/assets/images/logo-dark@2x.png" alt="Pheromone">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Home</a>
-                        <ul class="dropdown-menu columns-3">
-                            <li class="dropdown-header">Multi Page</li>
-                                <li><a href="#" class="dropdown-item">Slider Parallax</a></li>
-                                <li><a href="#" class="dropdown-item">Slider Parallax 2</a></li>
-                                <li><a href="#" class="dropdown-item">Image Parallax</a></li>
-                                <li><a href="#" class="dropdown-item">Image Parallax 2</a></li>
-                                <li><a href="#" class="dropdown-item">Ken Burns Slider</a></li>
-                                <li><a href="#" class="dropdown-item">Ken Burns 2 Slider</a></li>
-                                <li><a href="#" class="dropdown-item">Fullscreen Video</a></li>
-                                <li><a href="#" class="dropdown-item">Fullscreen Video 2</a></li>
-                                <li><a href="#" class="dropdown-item">Halfscreen Parallax</a></li>
-                                <li><a href="#" class="dropdown-item">Half Screen Parallax 2</a></li>
-                                <li><a href="#" class="dropdown-item">Text Rotator</a></li>
-                                <li><a href="#" class="dropdown-item">Text Rotator 2</a></li>
-                            <li class="dropdown-header">One Page</li>
-                                <li><a href="#" class="dropdown-item">Slider Parallax</a></li>
-                                <li><a href="#" class="dropdown-item">Slider Parallax 2</a></li>
-                                <li><a href="#" class="dropdown-item">Image Parallax</a></li>
-                                <li><a href="#" class="dropdown-item">Image Parallax 2</a></li>
-                                <li><a href="#" class="dropdown-item">Ken Burns Slider</a></li>
-                                <li><a href="#" class="dropdown-item">Ken Burns 2 Slider</a></li>
-                                <li><a href="#" class="dropdown-item">Fullscreen Video</a></li>
-                                <li><a href="#" class="dropdown-item">Fullscreen Video 2</a></li>
-                                <li><a href="#" class="dropdown-item">Halfscreen Parallax</a></li>
-                                <li><a href="#" class="dropdown-item">Half Screen Parallax 2</a></li>
-                                <li><a href="#" class="dropdown-item">Text Rotator</a></li>
-                                <li><a href="#" class="dropdown-item">Text Rotator 2</a></li>
-                            <li class="dropdown-header">Special Demos</li>
-                                <li><a href="#" class="dropdown-item">Agency Portfolio</a></li>
-                                <li><a href="#" class="dropdown-item">Architecture & Design</a></li>
-                                <li><a href="#" class="dropdown-item">Photography Portfolio</a></li>
-                                <li><a href="#" class="dropdown-item">Personal / Freelancer</a></li>
-                                <li><a href="#" class="dropdown-item">Coming Soon #1</a></li>
-                                <li><a href="#" class="dropdown-item">Coming Soon #2</a></li>
-                                <li><a href="#" class="dropdown-item">Coming Soon #3</a></li>
-                                <li><a href="#" class="dropdown-item">More Demos</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-item">About Us 1</a></li>
-                            <li><a href="#" class="dropdown-item">About Us 2</a></li>
-                            <li><a href="#" class="dropdown-item">Contact Us 1</a></li>
-                            <li><a href="#" class="dropdown-item">Contact Us 2</a></li>
-                            <li><a href="#" class="dropdown-item">Clients</a></li>
-                            <li><a href="#" class="dropdown-item">Team</a></li>
-                            <li><a href="#" class="dropdown-item">Services</a></li>
-                            <li><a href="#" class="dropdown-item">FAQ</a></li>
-                            <li><a href="#" class="dropdown-item">Error 404</a></li>
-                            <li><a href="#" class="dropdown-item">Blank Page</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Portfolio</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-item">Masonry</a></li>
-                            <li><a href="#" class="dropdown-item">4 Columns</a></li>
-                            <li><a href="#" class="dropdown-item">3 Columns</a></li>
-                            <li><a href="#" class="dropdown-item">2 Columns</a></li>
-                            <li><a href="#" class="dropdown-item">Single Project</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">News</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-item">Masonry 3 Columns</a></li>
-                            <li><a href="#" class="dropdown-item">Masonry Sidebar</a></li>
-                            <li><a href="#" class="dropdown-item">Classic Sidebar</a></li>
-                            <li><a href="#" class="dropdown-item">Medium Sidebar</a></li>
-                            <li><a href="#" class="dropdown-item">Single Post</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Shop</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-item">My account</a></li>
-                            <li><a href="#" class="dropdown-item">Checkout</a></li>
-                            <li><a href="#" class="dropdown-item">Cart</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Purcahse</a>
-                    </li>
-                </ul>
-            </div>
-            <ul class="navbar-nav d-flex flex-row align-items-center gap-3">
-                <li class="nav-item dropdown shopping-dropdown">
-                    <i data-cart-item-count="0" class="fa-solid fa-bag-shopping fa-lg dropdown-toggle text-white nav-link shopping-icon nav-icon"></i>
-                    <ul class="dropdown-menu">
-                        <li class="fs-7">No items currently in cart</li>
-                    </ul>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kanit:wght@100;200;300;400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="animations.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top bg-transparent navbar-dark">
+      <div class="container justify-content-between align-items-center">
+        <a href="#" class="navbar-brand">
+          <img
+            id="logo-light"
+            class="navbar-logo"
+            src="https://wordpress.dankov-themes.com/pheromone/wp-content/themes/pheromone/assets/images/logo@2x.png"
+            alt="Pheromone"
+          />
+          <img
+            id="logo-dark"
+            class="navbar-logo opacity-0"
+            src="https://wordpress.dankov-themes.com/pheromone/wp-content/themes/pheromone/assets/images/logo-dark@2x.png"
+            alt="Pheromone"
+          />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Home</a
+              >
+              <ul class="dropdown-menu columns-3">
+                <li class="dropdown-header">Multi Page</li>
+                <li><a href="#" class="dropdown-item">Slider Parallax</a></li>
+                <li><a href="#" class="dropdown-item">Slider Parallax 2</a></li>
+                <li><a href="#" class="dropdown-item">Image Parallax</a></li>
+                <li><a href="#" class="dropdown-item">Image Parallax 2</a></li>
+                <li><a href="#" class="dropdown-item">Ken Burns Slider</a></li>
+                <li>
+                  <a href="#" class="dropdown-item">Ken Burns 2 Slider</a>
                 </li>
-                <li class="nav-item">   
-                    <i class="fa-solid fa-magnifying-glass fa-lg search-icon nav-link nav-icon"></i>
+                <li><a href="#" class="dropdown-item">Fullscreen Video</a></li>
+                <li>
+                  <a href="#" class="dropdown-item">Fullscreen Video 2</a>
                 </li>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </ul>
+                <li>
+                  <a href="#" class="dropdown-item">Halfscreen Parallax</a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item">Half Screen Parallax 2</a>
+                </li>
+                <li><a href="#" class="dropdown-item">Text Rotator</a></li>
+                <li><a href="#" class="dropdown-item">Text Rotator 2</a></li>
+                <li class="dropdown-header">One Page</li>
+                <li><a href="#" class="dropdown-item">Slider Parallax</a></li>
+                <li><a href="#" class="dropdown-item">Slider Parallax 2</a></li>
+                <li><a href="#" class="dropdown-item">Image Parallax</a></li>
+                <li><a href="#" class="dropdown-item">Image Parallax 2</a></li>
+                <li><a href="#" class="dropdown-item">Ken Burns Slider</a></li>
+                <li>
+                  <a href="#" class="dropdown-item">Ken Burns 2 Slider</a>
+                </li>
+                <li><a href="#" class="dropdown-item">Fullscreen Video</a></li>
+                <li>
+                  <a href="#" class="dropdown-item">Fullscreen Video 2</a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item">Halfscreen Parallax</a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item">Half Screen Parallax 2</a>
+                </li>
+                <li><a href="#" class="dropdown-item">Text Rotator</a></li>
+                <li><a href="#" class="dropdown-item">Text Rotator 2</a></li>
+                <li class="dropdown-header">Special Demos</li>
+                <li><a href="#" class="dropdown-item">Agency Portfolio</a></li>
+                <li>
+                  <a href="#" class="dropdown-item">Architecture & Design</a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item">Photography Portfolio</a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item">Personal / Freelancer</a>
+                </li>
+                <li><a href="#" class="dropdown-item">Coming Soon #1</a></li>
+                <li><a href="#" class="dropdown-item">Coming Soon #2</a></li>
+                <li><a href="#" class="dropdown-item">Coming Soon #3</a></li>
+                <li><a href="#" class="dropdown-item">More Demos</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Pages</a
+              >
+              <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item">About Us 1</a></li>
+                <li><a href="#" class="dropdown-item">About Us 2</a></li>
+                <li><a href="#" class="dropdown-item">Contact Us 1</a></li>
+                <li><a href="#" class="dropdown-item">Contact Us 2</a></li>
+                <li><a href="#" class="dropdown-item">Clients</a></li>
+                <li><a href="#" class="dropdown-item">Team</a></li>
+                <li><a href="#" class="dropdown-item">Services</a></li>
+                <li><a href="#" class="dropdown-item">FAQ</a></li>
+                <li><a href="#" class="dropdown-item">Error 404</a></li>
+                <li><a href="#" class="dropdown-item">Blank Page</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Portfolio</a
+              >
+              <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item">Masonry</a></li>
+                <li><a href="#" class="dropdown-item">4 Columns</a></li>
+                <li><a href="#" class="dropdown-item">3 Columns</a></li>
+                <li><a href="#" class="dropdown-item">2 Columns</a></li>
+                <li><a href="#" class="dropdown-item">Single Project</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >News</a
+              >
+              <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item">Masonry 3 Columns</a></li>
+                <li><a href="#" class="dropdown-item">Masonry Sidebar</a></li>
+                <li><a href="#" class="dropdown-item">Classic Sidebar</a></li>
+                <li><a href="#" class="dropdown-item">Medium Sidebar</a></li>
+                <li><a href="#" class="dropdown-item">Single Post</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Shop</a
+              >
+              <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item">My account</a></li>
+                <li><a href="#" class="dropdown-item">Checkout</a></li>
+                <li><a href="#" class="dropdown-item">Cart</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Purcahse</a>
+            </li>
+          </ul>
         </div>
+        <div class="vl d-none d-xl-block"></div>
+        <ul
+          class="navbar-nav d-flex flex-row align-items-center gap-md-3 icons-nav"
+        >
+          <li class="nav-item dropdown shopping-dropdown">
+            <i
+              data-cart-item-count="0"
+              class="fa-solid fa-bag-shopping fa-lg dropdown-toggle text-white nav-link shopping-icon nav-icon"
+            ></i>
+            <ul class="dropdown-menu">
+              <li class="fs-7">No items currently in cart</li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <i
+              class="fa-solid fa-magnifying-glass fa-lg search-icon nav-link nav-icon"
+            ></i>
+          </li>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+          >
+            <ion-icon size="large" name="menu-outline"></ion-icon>
+          </button>
+        </ul>
+      </div>
     </nav>
 
-    <section id="carouselId" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <!-- Intro (Carousel) -->
+    <header>
+      <section
+        id="intro-carousel"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
         <ol class="carousel-indicators">
-            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
-            <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
-            <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
+          <li
+            data-bs-target="#intro-carousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="First slide"
+          ></li>
+          <li
+            data-bs-target="#intro-carousel"
+            data-bs-slide-to="1"
+            aria-label="Second slide"
+          ></li>
+          <li
+            data-bs-target="#intro-carousel"
+            data-bs-slide-to="2"
+            aria-label="Third slide"
+          ></li>
         </ol>
         <div class="carousel-inner text-white text-center" role="listbox">
-            <div class="carousel-item fill active">
-                <div style="background-image: url(https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/19.jpg);" class="fill">
-                    <div class="carousel-bg-filter fill">
-                        <h1 class="slide-title cursive fs-1 mt-3 mb-4">Creative Agency</h1>
-                        <div class="slide-subtitle-container mb-4">
-                            <h3 class="slide-subtitle fs-5">RESPONSIVE <strong>MULTI-CONCEPT</strong> THEME</h3>
-                        </div>
-                        <div class="fs-6">
-                            <a href="#about-us-section" class="button white-button outline-button slide-button button-float-in-left">Who are we?</a><a class="button white-button fill-button slide-button button-float-in-right">Contact Us</a>
-                        </div>
-                    </div>
+          <div class="carousel-item fill active">
+            <div
+              style="
+                background-image: url(https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/19.jpg);
+              "
+              class="fill"
+            >
+              <div class="carousel-bg-filter fill">
+                <h1 class="slide-title cursive fs-1 mt-sm-3 mb-sm-4">
+                  Creative Agency
+                </h1>
+                <div class="slide-subtitle-container mb-4">
+                  <h3 class="slide-subtitle fs-5">
+                    RESPONSIVE <strong>MULTI-CONCEPT</strong> THEME
+                  </h3>
                 </div>
-            </div>
-            <div class="carousel-item fill">
-                <div style="background-image: url(https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/22-3-1.jpg)" class="fill">
-                    <div class="carousel-bg-filter fill">
-                        <div class="play-icon-container">
-                            <div class="play-icon slide-in-bottom"></div>
-                        </div>
-                        <h1 class="slide-title cursive fs-1 mt-3 mb-4">Our Story</h1>
-                        <div class="slide-subtitle-container mb-4">
-                            <h3 class="slide-subtitle fs-5">watch <strong>video</strong></h3>
-                        </div>
-                    </div>
+                <div class="slide-anchors-container fs-6">
+                  <a
+                    href="#about-us-section"
+                    class="button white-button outline-button slide-button button-float-in-left"
+                  >
+                    Who are we?
+                  </a>
+                  <a
+                    href="#contact-us-section"
+                    class="button white-button fill-button slide-button button-float-in-right"
+                  >
+                    Contact Us
+                  </a>
                 </div>
+              </div>
             </div>
-            <div class="carousel-item fill">
-                <div style="background-image: url(https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/12/17.jpg)" class="fill">
-                    <div class="carousel-bg-filter fill">
-                        <h1 class="slide-title cursive fs-1 mt-3 mb-4">Design Bureau</h1>
-                        <div class="slide-subtitle-container mb-2">
-                            <h3 class="slide-subtitle float-in-above fs-5">PREMIUM <strong>FULLY RESPONSIVE</strong> THEME</h3>
-                        </div>
-                        <div class="mouse-icon-container">
-                            <a href="#about-us-section" class="mouse-icon"></a>
-                        </div>
-                    </div>
+          </div>
+          <div class="carousel-item fill">
+            <div
+              style="
+                background-image: url(https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/22-3-1.jpg);
+              "
+              class="fill"
+            >
+              <div class="carousel-bg-filter fill">
+                <div class="play-icon-container">
+                  <div class="play-icon slide-in-bottom"></div>
                 </div>
+                <h1 class="slide-title cursive fs-1 mt-3 mb-4">Our Story</h1>
+                <div class="slide-subtitle-container mb-4">
+                  <h3 class="slide-subtitle fs-5">
+                    watch <strong>video</strong>
+                  </h3>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="carousel-item fill">
+            <div
+              style="
+                background-image: url(https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/12/17.jpg);
+              "
+              class="fill"
+            >
+              <div class="carousel-bg-filter fill">
+                <h1 class="slide-title cursive fs-1 mt-3 mb-4">Design Bureau</h1>
+                <div class="slide-subtitle-container mb-2">
+                  <h3 class="slide-subtitle float-in-above fs-5">
+                    PREMIUM <strong>FULLY RESPONSIVE</strong> THEME
+                  </h3>
+                </div>
+                <div class="mouse-icon-container">
+                  <a href="#about-us-section" class="mouse-icon"></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <button class="carousel-control-prev d-none d-lg-block" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+        <button
+          class="carousel-control-prev d-none d-lg-block"
+          type="button"
+          data-bs-target="#intro-carousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next d-none d-lg-block" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+        <button
+          class="carousel-control-next d-none d-lg-block"
+          type="button"
+          data-bs-target="#intro-carousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
         </button>
-    </section>
+      </section>
+    </header>
 
-    <section id="about-us-section">
+    <!-- Body -->
+    <main>
+      <section id="about-us-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg text-center text-lg-start w-auto">
-                    <h2>About Studio</h2>
-                    <p>The collaborative process of web development requires close integration of technology and design – two disciplines that inform one another. We make hip and exciting web sites. Big and Small. Concept development, interface design, production management.</p>
-                    <div class="cursive rotate-4deg">
-                        Ethan Pheromone
-                    </div>
-                </div>
-                <div class="col pt-3 pt-lg-0 d-flex align-items-center justify-content-center">
-                    <div class="skill-levels-container my-5 my-lg-auto">
-                        <div class="progress-circle">
-                            <div class="circle" data-skill-level="93">
-                                <canvas class="skill-level-canvas" width="100" height="100"></canvas>
-                            </div>
-                            <div class="skill-name">Design</div>
-                        </div>
-                        <div class="progress-circle">
-                            <div class="circle" data-skill-level="82">
-                                <canvas class="skill-level-canvas" width="100" height="100"></canvas>
-                            </div>
-                            <div class="skill-name">Programming</div>
-                        </div>
-                        <div class="progress-circle">
-                            <div class="circle" data-skill-level="68">
-                                <canvas class="skill-level-canvas" width="100" height="100"></canvas>
-                            </div>
-                            <div class="skill-name">Photography</div>
-                        </div>
-                    </div>
-                </div>
+          <div class="row">
+            <div class="col-lg text-center text-lg-start w-auto">
+              <h2>About Studio</h2>
+              <p>
+                The collaborative process of web development requires close
+                integration of technology and design – two disciplines that inform
+                one another. We make hip and exciting web sites. Big and Small.
+                Concept development, interface design, production management.
+              </p>
+              <div class="cursive rotate-4deg">Ethan Pheromone</div>
             </div>
-        </div>
-    </section>
-
-    <section id="modern-portfolio-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 text-center text-lg-start">
-                    <h2>Modern Portfolio</h2>
-                    <p class="mb-5">Amazing solution for portfolio websites which you can fit for freelancers, photographers or agency showcase. Pheromone easily and efficiently scales your project with one code base.</p>
-                    <a href="" class="button black-button">check it out</a>
+            <div
+              class="col pt-3 pt-lg-0 d-flex align-items-center justify-content-center"
+            >
+              <div class="skill-levels-container my-5 my-lg-auto">
+                <div class="progress-circle">
+                  <div class="circle" data-skill-level="93">
+                    <canvas
+                      class="skill-level-canvas"
+                      width="100"
+                      height="100"
+                    ></canvas>
+                  </div>
+                  <div class="skill-name">Design</div>
                 </div>
-                <div class="offset-lg-1 col">
-                    <div id="monitor-carousel" class="carousel  ">
-                        <ol class="carousel-indicators">
-                            <li data-bs-target="#monitor-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
-                            <li data-bs-target="#monitor-carousel" data-bs-slide-to="1" aria-label="Second slide"></li>
-                            <li data-bs-target="#monitor-carousel" data-bs-slide-to="2" aria-label="Third slide"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img width="600" height="461" src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/6.png" class="" alt="" loading="lazy" srcset="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/6.png 600w, https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/6-300x231.png 300w" sizes="(max-width: 600px) 100vw, 600px">
-                            </div>
-                            <div class="carousel-item">
-                                <img width="600" height="461" src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/7.png" class="" alt="" loading="lazy" srcset="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/7.png 600w, https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/7-300x231.png 300w" sizes="(max-width: 600px) 100vw, 600px">
-                            </div>
-                            <div class="carousel-item">
-                                <img width="600" height="461" src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/8.png" class="" alt="" loading="lazy" srcset="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/8.png 600w, https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/8-300x231.png 300w" sizes="(max-width: 600px) 100vw, 600px">
-                            </div>
-                        </div>
-                    </div>
+                <div class="progress-circle">
+                  <div class="circle" data-skill-level="82">
+                    <canvas
+                      class="skill-level-canvas"
+                      width="100"
+                      height="100"
+                    ></canvas>
+                  </div>
+                  <div class="skill-name">Programming</div>
                 </div>
+                <div class="progress-circle">
+                  <div class="circle" data-skill-level="68">
+                    <canvas
+                      class="skill-level-canvas"
+                      width="100"
+                      height="100"
+                    ></canvas>
+                  </div>
+                  <div class="skill-name">Photography</div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
-
-    <section id="our-services-section">
+      </section>
+      <section id="modern-portfolio-section">
         <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <h2>Our Services</h2>
-                        <p class="mb-5 mx-auto this-section">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis pulvinar vestibulum. Doneceleifend, sem sed dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elits</p>
-                    </div>
+          <div class="row">
+            <div class="col-lg-5 text-center text-lg-start">
+              <h2>Modern Portfolio</h2>
+              <p class="mb-5">
+                Amazing solution for portfolio websites which you can fit for
+                freelancers, photographers or agency showcase. Pheromone easily
+                and efficiently scales your project with one code base.
+              </p>
+              <a href="" class="button black-button">check it out</a>
+            </div>
+            <div class="offset-lg-1 col">
+              <div id="monitor-carousel" class="carousel small-carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/6.png"
+                      class=""
+                      alt=""
+                      loading="lazy"
+                      srcset="
+                        https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/6.png         600w,
+                        https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/6-300x231.png 300w
+                      "
+                      sizes="(max-width: 600px) 100vw, 600px"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/7.png"
+                      class=""
+                      alt=""
+                      loading="lazy"
+                      srcset="
+                        https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/7.png         600w,
+                        https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/7-300x231.png 300w
+                      "
+                      sizes="(max-width: 600px) 100vw, 600px"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/8.png"
+                      class=""
+                      alt=""
+                      loading="lazy"
+                      srcset="
+                        https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/8.png         600w,
+                        https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/8-300x231.png 300w
+                      "
+                      sizes="(max-width: 600px) 100vw, 600px"
+                    />
+                  </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 col-lg service-card">
-                        <ion-icon name="ios-analytics" class="d-block"></ion-icon>
-                        <h4>Analytics</h4>
-                        <p>Lorem ipsum dolor sit amet. Con eleifend sem sed dictum mattis sectetur elit. Nulla convallis pul</p>
-                    </div>
-                    <div class="col-md-6 col-lg service-card">
-                        <ion-icon name="ios-pie" class="d-block"></ion-icon>
-                        <h4>Design</h4>
-                        <p>Lorem ipsum dolor sit amet. Con eleifend sem sed dictum mattis sectetur elit. Nulla convallis pul</p>
-                    </div>
-                    <div class="col-md-6 col-lg service-card">
-                        <ion-icon name="ios-alarm" class="d-block"></ion-icon>
-                        <h4>Consulting</h4>
-                        <p>Lorem ipsum dolor sit amet. Con eleifend sem sed dictum mattis sectetur elit. Nulla convallis pul</p>
-                    </div>
-                    <div class="col-md-6 col-lg service-card">
-                        <ion-icon name="logo-game-controller-b" class="d-block"></ion-icon>
-                        <h4>Advertizing</h4>
-                        <p>Lorem ipsum dolor sit amet. Con eleifend sem sed dictum mattis sectetur elit. Nulla convallis pul</p>
-                    </div>
-                </div>
+                <ol class="carousel-indicators">
+                  <li
+                    data-bs-target="#monitor-carousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="First slide"
+                  ></li>
+                  <li
+                    data-bs-target="#monitor-carousel"
+                    data-bs-slide-to="1"
+                    aria-label="Second slide"
+                  ></li>
+                  <li
+                    data-bs-target="#monitor-carousel"
+                    data-bs-slide-to="2"
+                    aria-label="Third slide"
+                  ></li>
+                </ol>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <section id="services-2" class="overflow-hidden">
+      </section>
+      <section id="our-services-section">
+        <div class="container">
+          <div class="row">
+            <div class="col text-center">
+              <h2>Our Services</h2>
+              <p class="mb-5 mx-auto this-section">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                convallis pulvinar vestibulum. Doneceleifend, sem sed dictum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elits
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg service-card">
+              <ion-icon name="analytics-outline" class="d-block"></ion-icon>
+              <h4>Analytics</h4>
+              <p>
+                Lorem ipsum dolor sit amet. Con eleifend sem sed dictum mattis
+                sectetur elit. Nulla convallis pul
+              </p>
+            </div>
+            <div class="col-md-6 col-lg service-card">
+              <ion-icon name="pie-chart-outline" class="d-block"></ion-icon>
+              <h4>Design</h4>
+              <p>
+                Lorem ipsum dolor sit amet. Con eleifend sem sed dictum mattis
+                sectetur elit. Nulla convallis pul
+              </p>
+            </div>
+            <div class="col-md-6 col-lg service-card">
+              <ion-icon name="alarm-outline" class="d-block"></ion-icon>
+              <h4>Consulting</h4>
+              <p>
+                Lorem ipsum dolor sit amet. Con eleifend sem sed dictum mattis
+                sectetur elit. Nulla convallis pul
+              </p>
+            </div>
+            <div class="col-md-6 col-lg service-card">
+              <ion-icon name="game-controller-outline" class="d-block"></ion-icon>
+              <h4>Advertizing</h4>
+              <p>
+                Lorem ipsum dolor sit amet. Con eleifend sem sed dictum mattis
+                sectetur elit. Nulla convallis pul
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="services-2" class="overflow-hidden">
         <div class="parallax">
-            <img class="bg-img" src='https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/22-3-1.jpg' alt="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-lg service-card">
-                        <ion-icon name="ios-infinite" class="d-block"></ion-icon>
-                        <h4>Lifetime updates</h4>
-                        <p>Lorem ipsum dolor sit amet. Con eleifend sem sed dictum</p>
-                    </div>
-                    <div class="col-md-6 col-lg service-card">
-                        <ion-icon name="ios-alarm" class="d-block"></ion-icon>
-                        <h4>LIGHTWEIGHT</h4>
-                        <p>Lorem ipsum dolor sit amet. Con eleifend sem sed dictum</p>
-                    </div>
-                    <div class="col-md-6 col-lg service-card">
-                        <ion-icon name="ios-tv" class="d-block"></ion-icon>
-                        <h4>responsive</h4>
-                        <p>Lorem ipsum dolor sit amet. Con eleifend sem sed dictum</p>
-                    </div>
-                    <div class="col-md-6 col-lg service-card">
-                        <ion-icon name="ios-settings" class="d-block"></ion-icon>
-                        <h4>multi-concept</h4>
-                        <p>Lorem ipsum dolor sit amet. Con eleifend sem sed dictum</p>
-                    </div>
-                </div>
-            </div>
+          <img
+            class="bg-img"
+            src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/22-3-1.jpg"
+            alt=""
+          />
         </div>
-    </section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg service-card">
+              <ion-icon name="infinite-outline" class="d-block"></ion-icon>
+              <h4>Lifetime updates</h4>
+              <p>Lorem ipsum dolor sit amet. Con eleifend sem sed dictum</p>
+            </div>
+            <div class="col-md-6 col-lg service-card">
+              <ion-icon name="alarm-outline" class="d-block"></ion-icon>
+              <h4>LIGHTWEIGHT</h4>
+              <p>Lorem ipsum dolor sit amet. Con eleifend sem sed dictum</p>
+            </div>
+            <div class="col-md-6 col-lg service-card">
+              <ion-icon name="tv-outline" class="d-block"></ion-icon>
+              <h4>responsive</h4>
+              <p>Lorem ipsum dolor sit amet. Con eleifend sem sed dictum</p>
+            </div>
+            <div class="col-md-6 col-lg service-card">
+              <ion-icon name="options-outline" class="d-block"></ion-icon>
+              <h4>multi-concept</h4>
+              <p>Lorem ipsum dolor sit amet. Con eleifend sem sed dictum</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="help-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 text-center text-lg-start">
+              <h2>HOW CAN WE HELP?</h2>
+              <p class="mb-5">
+                Pheromone will look beautiful on any device. Serve high-resolution
+                images to devices with retina displays. We have a dedicated
+                support team ready to answer your questions. Feel free to contact
+                us to provide some feedback on our templates or give us
+                suggestions for new themes.
+              </p>
+              <a href="" class="button black-button">check it out</a>
+            </div>
+            <div class="offset-lg-1 col">
+              <div
+                id="multi-monitor-carousel"
+                class="mt-5 mt-md-3 carousel small-carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/2.png"
+                      class=""
+                      alt=""
+                      loading="lazy"
+                      srcset="
+                        https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/2.png         600w,
+                        https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/2-300x231.png 300w
+                      "
+                      sizes="(max-width: 600px) 100vw, 600px"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/3.png"
+                      class=""
+                      alt=""
+                      loading="lazy"
+                      srcset="
+                        https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/3.png         600w,
+                        https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/3-300x231.png 300w
+                      "
+                      sizes="(max-width: 600px) 100vw, 600px"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/1.png"
+                      class=""
+                      alt=""
+                      loading="lazy"
+                      srcset="
+                        https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/1.png         600w,
+                        https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/1-300x231.png 300w
+                      "
+                      sizes="(max-width: 600px) 100vw, 600px"
+                    />
+                  </div>
+                </div>
+                <ol class="carousel-indicators">
+                  <li
+                    data-bs-target="#monitor-carousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="First slide"
+                  ></li>
+                  <li
+                    data-bs-target="#monitor-carousel"
+                    data-bs-slide-to="1"
+                    aria-label="Second slide"
+                  ></li>
+                  <li
+                    data-bs-target="#monitor-carousel"
+                    data-bs-slide-to="2"
+                    aria-label="Third slide"
+                  ></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="subscribe-section">
+        <div class="container">
+          <div class="row text-center">
+            <h2>subscribe</h2>
+            <p>Sign up with your email address to recieve news and updates</p>
+          </div>
+          <div class="row">
+            <form class="col d-flex align-items-center justify-content-center">
+              <input
+                type="email"
+                placeholder="Email address..."
+                class="d-inline-block"
+              />
+              <button class="black-button" type="submit">subscribe</button>
+            </form>
+          </div>
+          <div class="mt-4 d-flex justify-content-center">
+            <img
+              src="https://wordpress.dankov-themes.com/pheromone/wp-content/themes/pheromone/assets/images/mailchimp.png"
+              alt="MAIL CHIMP"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="latest-work-section">
+        <div class="">
+          <div class="container">
+            <div class="row">
+              <div class="">
+                <div class="text-center">
+                  <h2>Latest work</h2>
+                  <p>
+                    Yourself required no at thoughts delicate landlord it be.
+                    Branched dashwood do is whatever it.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio w-100">
+            <div class="portfolio-half">
+              <div class="portfolio-col">
+                <a class="portfolio-item">
+                  <img
+                    class="pi-bg"
+                    src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/12/1.jpg"
+                  />
+                  <div class="pi-whitener"></div>
+                  <div class="pi-details">
+                    <h5>from image creative</h5>
+                    <p>Though enough county</p>
+                  </div>
+                </a>
+                <a class="portfolio-item">
+                  <img
+                    class="pi-bg"
+                    src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/12/5.jpg"
+                  />
+                  <div class="pi-whitener"></div>
+                  <div class="pi-details">
+                    <h5>Bred soon park</h5>
+                    <p>In school giraffe</p>
+                  </div>
+                </a>
+              </div>
+              <div class="portfolio-col">
+                <a class="portfolio-item">
+                  <img
+                    class="pi-bg"
+                    src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/12/2.jpg"
+                  />
+                  <div class="pi-whitener"></div>
+                  <div class="pi-details">
+                    <h5>Marks None Indoors</h5>
+                    <p>Nothing rain seven</p>
+                  </div>
+                </a>
+                <a class="portfolio-item">
+                  <img
+                    class="pi-bg"
+                    src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/12/6.jpg"
+                  />
+                  <div class="pi-whitener"></div>
+                  <div class="pi-details">
+                    <h5>Olympus Green Light</h5>
+                    <p>Northern atmosphere bleak</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-half">
+              <div class="portfolio-col">
+                <a class="portfolio-item">
+                  <img
+                    class="pi-bg"
+                    src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/12/13.jpg"
+                  />
+                  <div class="pi-whitener"></div>
+                  <div class="pi-details">
+                    <h5>Long time write</h5>
+                    <p>Study street tree</p>
+                  </div>
+                </a>
+              </div>
+              <div class="portfolio-col">
+                <a class="portfolio-item">
+                  <img
+                    class="pi-bg"
+                    src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/12/3.jpg"
+                  />
+                  <div class="pi-whitener"></div>
+                  <div class="pi-details">
+                    <h5>crowd giant door</h5>
+                    <p>Focal noting demand</p>
+                  </div>
+                </a>
+                <a class="portfolio-item">
+                  <img
+                    class="pi-bg"
+                    src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/12/7.jpg"
+                  />
+                  <div class="pi-whitener"></div>
+                  <div class="pi-details">
+                    <h5>dream final clean</h5>
+                    <p>house done block wood</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="minh-0 footer">
+        <div class="container">
+          <div class="row align-items-center justify-content-around">
+            <div class="col-md">
+              <h2 class="text-lg-start">WE BELIEVE OUR WORK SPEAKS FOR ITSELF</h2>
+            </div>
+            <div class="col text-lg-end">
+              <a href="" class="black-button outline-button"
+                >view all portfolio</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="news-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md text-center text-md-start">
+              <h2>News</h2>
+            </div>
+            <div class="col text-end">
+              <a href="">
+                <h4>see all news</h4>
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <img
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/1-4.jpg"
+                alt=""
+              />
+              <a href="">
+                <h5>GENERAL ENQUIRE PICTURE LETTERS ON</h5>
+              </a>
+              <p>
+                Left till here away at to whom past. Feelings laughing at no
+                wondered repeated provided finished. It acceptance my advantages.
+              </p>
+              <a href="" class="light-gray-button">read more</a>
+            </div>
+            <div class="col-md">
+              <img
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/5.jpg"
+                alt=""
+              />
+              <h5>LONGER WAITED MR OF NATURE SEEMED</h5>
+              <p>
+                Departure so attention pronounce satisfied daughters am. But shy
+                tedious pressed studied opinion entered windows off.
+              </p>
+              <a href="" class="light-gray-button">read more</a>
+            </div>
+            <div class="col-md">
+              <img
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/3-1.jpg"
+                alt=""
+              />
+              <h5>ATTACHMENT YE SO AM TRAVELLING</h5>
+              <p>
+                Do to be agreeable conveying oh assurance. Wicket longer admire do
+                barton vanity itself do in it. Preferred to sportsmen it
+                engrossed.
+              </p>
+              <a href="" class="light-gray-button">read more</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="minh-0"
+        style="
+          background: url(https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/16.jpg);
+          background-size: cover;
+        "
+      >
+        <div class="container text-center">
+          <div class="row">
+            <i
+              class="icon fa fa-quote-left text-white-50"
+              style="font-size: 30px"
+            ></i>
+            <h4 class="text-white my-5">
+              A BUSINESS HAS TO BE INVOLVING, IT HAS TO BE FUN, AND IT HAS TO
+              EXERCISE YOUR CREATIVE INSTINCTS. START WHERE YOU ARE. USE WHAT YOU
+              HAVE. DO WHAT YOU CAN.
+            </h4>
+            <div class="cursive text-white">James Daniels</div>
+          </div>
+        </div>
+      </section>
+      <section id="our-team-section">
+        <div class="container">
+          <div class="row">
+            <h2 class="text-center">our team</h2>
+          </div>
+          <div class="row">
+            <div class="team-member-card col-md-6 col-lg-3">
+              <h4>James Daniels</h4>
+              <img
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/12/avatar5-4-1.jpg"
+                alt=""
+              />
+              <div class="socials">
+                <a href="">
+                  <i class="icon fa fa-fw fa-twitter"></i>
+                </a>
+                <a href="">
+                  <i class="icon fa fa-fw fa-facebook-f"></i>
+                </a>
+                <a href="">
+                  <i class="icon fa fa-fw fa-google-plus"></i>
+                </a>
+              </div>
+              <p class="member-role">CEO</p>
+            </div>
+            <div class="team-member-card col-md-6 col-lg-3">
+              <h4>MICHAEL WILLIAMS</h4>
+              <img
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/avatar3-2-1.jpg"
+                alt=""
+              />
+              <div class="socials">
+                <a href="">
+                  <i class="icon fa fa-fw fa-facebook-f"></i>
+                </a>
+                <a href="">
+                  <i class="icon fa fa-fw fa-google-plus"></i>
+                </a>
+                <a href="">
+                  <i class="icon fa fa-fw fa-github"></i>
+                </a>
+              </div>
+              <p class="member-role">Manager</p>
+            </div>
+            <div class="team-member-card col-md-6 col-lg-3">
+              <h4>LIAM LUCAS</h4>
+              <img
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/avatar2-3-1.jpg"
+                alt=""
+              />
+              <div class="socials">
+                <a href="">
+                  <div class="icon fa fa-fw fa-twitter"></div>
+                </a>
+                <a href="">
+                  <div class="icon fa fa-fw fa-dribbble"></div>
+                </a>
+                <a href="">
+                  <div class="icon fa fa-fw fa-youtube"></div>
+                </a>
+              </div>
+              <p class="member-role">Developer</p>
+            </div>
+            <div class="team-member-card col-md-6 col-lg-3">
+              <h4>CHARLOTTE HARRISON</h4>
+              <img
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/avatar4-3-1.jpg"
+                alt=""
+              />
+              <div class="socials">
+                <a href="">
+                  <i class="icon fa fa-fw fa-instagram"></i>
+                </a>
+                <a href="">
+                  <i class="icon fa fa-fw fa-dribbble"></i>
+                </a>
+                <a href="">
+                  <i class="icon fa fa-fw fa-youtube"></i>
+                </a>
+              </div>
+              <p class="member-role">Designer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="stats-section"
+        class="minh-0"
+        style="
+          background: url(https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/1-2.jpg);
+          background-size: cover;
+          background-position: center;
+          padding: 5vh;
+        "
+      >
+        <div class="container">
+          <div class="row align-items-center text-center">
+            <div class="col-md-6 col-lg">
+              <div class="stat-number">29</div>
+              <p class="stat-label">themes released</p>
+            </div>
+            <div class="col-md-6 col-lg">
+              <div class="stat-number">2785</div>
+              <p class="stat-label">happy customers</p>
+            </div>
+            <div class="col-md-6 col-lg">
+              <div class="stat-number">12</div>
+              <p class="stat-label">winning awards</p>
+            </div>
+            <div class="col-md-6 col-lg">
+              <div class="stat-number">78</div>
+              <p class="stat-label">completed project</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="choose-us-section">
+        <div class="container">
+          <div class="row my-5">
+            <div class="col text-center">
+              <h2>Why choose us?</h2>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-md-6 col-lg service-card choose-us-card">
+              <ion-icon name="nutrition-outline" class="d-block"></ion-icon>
+              <h4>Analytics</h4>
+              <p>
+                Lorem ipsum dolor sit amet. Con eleifend sem sed dictum mattis
+                sectetur elit. Nulla convallis pul
+              </p>
+            </div>
+            <div class="col-md-6 col-lg service-card choose-us-card">
+              <ion-icon name="sunny-outline" class="d-block"></ion-icon>
+              <h4>Design</h4>
+              <p>
+                Lorem ipsum dolor sit amet. Con eleifend sem sed dictum mattis
+                sectetur elit. Nulla convallis pul
+              </p>
+            </div>
+            <div class="col-md-6 col-lg service-card choose-us-card">
+              <ion-icon name="glasses-outline" class="d-block"></ion-icon>
+              <h4>Consulting</h4>
+              <p>
+                Lorem ipsum dolor sit amet. Con eleifend sem sed dictum mattis
+                sectetur elit. Nulla convallis pul
+              </p>
+            </div>
+            <div class="col-md-6 col-lg service-card choose-us-card">
+              <ion-icon name="infinite-outline" class="d-block"></ion-icon>
+              <h4>Advertizing</h4>
+              <p>
+                Lorem ipsum dolor sit amet. Con eleifend sem sed dictum mattis
+                sectetur elit. Nulla convallis pul
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="video-section" class="text-white bg-section">
+        <div class="container text-center">
+          <ion-icon name="play-outline" class="icon-big"></ion-icon>
+          <h2>Watch <span class="fw-500">Video</span></h2>
+        </div>
+      </section>
+      <section id="testimonials-section" class="text-center">
+        <h2>Testimonials</h2>
+        <div id="testimonials-carousel" class="carousel small-carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/1-1.jpg"
+                loading="lazy"
+              />
+              <h5>
+                Thank you very much, the template is great!
+                Very concise and simple.
+              </h5>
+              <div class="customer-text">Pheromone Customer</div>
+              <div class="cursive rotate-4deg customer-name">Richard Kindall</div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/2.jpg"
+                loading="lazy"
+              />
+              <h5>
+                Adorable minimalist theme! Should be working well as
+                a canvas for any upcoming project.
+              </h5>
+              <div class="customer-text">Pheromone Customer</div>
+              <div class="cursive rotate-4deg customer-name">David Cohen</div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/3.jpg"
+                loading="lazy"
+              />
+              <h5>
+                Amazing and SUPER easy to incorporate,
+                looks like a great theme, full functionality indeed
+              </h5>
+              <div class="customer-text">Pheromone Customer</div>
+              <div class="cursive rotate-4deg customer-name">Jane Navarro</div>
+            </div>
+          </div>
+          <ol class="carousel-indicators">
+            <li
+              data-bs-target="#testimonials-carousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="First slide"
+            ></li>
+            <li
+              data-bs-target="#testimonials-carousel"
+              data-bs-slide-to="1"
+              aria-label="Second slide"
+            ></li>
+            <li
+              data-bs-target="#testimonials-carousel"
+              data-bs-slide-to="2"
+              aria-label="Third slide"
+            ></li>
+          </ol>
+        </div>
+      </section>
+      <section id="Purchase-now-section" class="small-section">
+        <div class="container">
+          <div class="row justify-content-between">
+            <h2 class="text-center text-lg-start col-md-8 mb-md-0">
+              Pheromone - Powerful <span class="fw-500">Multi-concept</span> theme
+            </h2>
+            <div class="col text-center text-md-end">
+              <a href="" class="black-button mx-auto mx-md-0 d-inline">Purchase Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact-us-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 text-center text-lg-start">
+              <h2>Contact us</h2>
+              <p>
+                Feel free to contact us to provide some feedback
+                on our templates, give us suggestions for new templates
+                and themes, or to just say hello! Lorem ipsum dolor
+                sit amet, consectetur adipiscing elit. Nulla convallis
+                pulvinar.
+              </p>
+              <hr>
+              <div class="contact-info text-uppercase">
+                <div class="contact-detail">
+                  <i class="fa fa-solid fa-location-pin"></i>
+                  <p class="d-inline-block">1234 SOME AVENUE, NEW YORK, NY 56789</p>
+                </div>
+                <div class="contact-detail">
+                  <i class="fa fa-solid fa-envelope"></i>
+                  <p class="d-inline-block">INFO@YOUWEBSITE.COM</p>
+                </div>
+                <div class="contact-detail">
+                  <i class="fa fa-solid fa-phone"></i>
+                  <p class="d-inline-block">(123) 456-7890</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 offset-lg-2 text-center text-lg-start">
+              <h2>Say hello!</h2>
+              <form class="message-form">
+                <input 
+                  type="text" 
+                  name="name"
+                  placeholder="Your Name"
+                >
+                <input 
+                  type="email" 
+                  name="e-mail"
+                  placeholder="Your E-mail"
+                >
+                <input 
+                  type="tel"
+                  name="phone-number"
+                  placeholder="Your Phone Number"
+                >
+                <textarea 
+                  name="message" 
+                  id="message" 
+                  cols="30" 
+                  rows="3"
+                  placeholder="message"
+                ></textarea>
+                <button class="black-button" type="submit">send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <section></section>
+      <section id="footer-section-1">
+        <div class="container  text-center text-md-start">
+          <div class="row">
+            <div class="col-md">
+              <h3>About</h3>
+              <p>
+                Thanks for choosing Pheromone for your next project!
+                Pheromone is a unique template for building beautiful
+                business website. We have a dedicated support team
+                ready to answer your questions. A business has to be
+                involving, it has to be fun.
+              </p>
+            </div>
 
-    <script src="jquery.js"></script>
-    <script src="dropdowns.js"></script>
-    <script src="navbar.js"></script>
-    <script src="carousel.js"></script>
-    <script src="skill-levels.js"></script>
-    <script src="https://kit.fontawesome.com/d4695009b6.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-</body>
+            <div class="offset-md-1 col-md-2">
+              <h3>Company</h3>
+              <a href="#about-us-section">About Us</a>
+              <a href="#our-serices-section">Our Services</a>
+              <a href="#testimonials-section">Our Clients</a>
+            </div>
+
+            <div class="col-md-2">
+              <h3 class="d-none d-md-block">&nbsp;</h3>
+              <a href="#news-section">Latest News</a>
+              <a href="#contact-us-section">Contact us</a>
+              <a href="#latest-work-section">Recent Works</a>
+            </div>
+
+            <div class="col-lg-3 instagram-feed mt-4 mt-md-0">
+              <h3>Instagram Feed</h3>
+              <img 
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2019/10/4-150x150.jpg" 
+                alt="" 
+                class="d-inline-block"
+              >
+              <img 
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2019/10/6-150x150.jpg" 
+                alt="" 
+                class="d-inline-block"
+              >
+              <img 
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2019/10/2-150x150.jpg" 
+                alt="" 
+                class="d-inline-block"
+              >
+              <img 
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2019/10/1-150x150.jpg" 
+                alt="" 
+                class="d-inline-block"
+              >
+              <img 
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2019/10/5-150x150.jpg" 
+                alt="" 
+                class="d-inline-block"
+              >
+              <img 
+                src="https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2019/10/3-150x150.jpg" 
+                alt="" 
+                class="d-inline-block"
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="footer-section-2" class="small-section">
+        <div class="footer-containerd d-flex justify-content-around align-items-center flex-wrap">
+          <p class="py-2 px-4">Powered by Ali Haitham</p>
+          <p class="py-2 px-4">We <i class="fa fa-solid fa-heart"></i> Creative People</p>
+          <div class="socials d-flex gap-4 py-2 px-4">
+            <a href="https://twitter.com"><i class="fa fa-solid fa-twitter"></i></a>
+            <a href="https://facebook.com"><i class="fa fa-solid fa-facebook-f"></i></a>
+            <a href="https://plus.google.com"><i class="fa fa-solid fa-google-plus"></i></a>
+            <a href="https://linkedin.com"><i class="fa fa-solid fa-linkedin"></i></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./javascript/jquery.js"></script>
+    <script src="./javascript/jquery.viewportchecker.min.js"></script>
+    <script src="./javascript/dropdowns.js"></script>
+    <script src="./javascript/navbar.js"></script>
+    <script src="./javascript/carousel.js"></script>
+    <script src="./javascript/skill-levels.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/d4695009b6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
 <!-- https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/19.jpg -->
 <!-- https://wordpress.dankov-themes.com/pheromone/wp-content/uploads/2016/11/22-3-1.jpg -->
