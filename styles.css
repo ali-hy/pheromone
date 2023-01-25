@@ -97,12 +97,18 @@ p {
 .percentage::after {
   content: "%";
 }
+
 .vl{
   position: relative;
   top: 8px;
   width: 1px;
   background-color: white;
   height: 2em;
+}
+
+.scrolled-navbar .vl{
+  background-color: var(--gray-tone-a);
+  top: 1px;
 }
 
 .bg-section{
@@ -574,7 +580,15 @@ section.carousel .carousel-item > div {
 /* ------ ABOUT US SECTION ------ */
 .skill-levels-container {
   text-align: center;
+  /* entry trnasition */
+  opacity: 0;
+  transition: opacity 1s;
 }
+.skill-levels-container.entered{
+  opacity: 1;
+}
+
+
 .progress-circle {
   display: inline-block;
   width: 150px;
@@ -609,7 +623,12 @@ section.carousel .carousel-item > div {
   margin: 0 auto;
   object-fit: contain;
   object-position: center;
+  transform: scale(0);
 }
+.small-carousel.entered img{
+  animation: scale-up 500ms ease 0s 1 normal forwards;
+}
+
 .small-carousel .carousel-indicators {
   position:relative;
 }
@@ -625,9 +644,6 @@ section.carousel .carousel-item > div {
 .service-card {
   text-align: center;
 }
-#services-2 .service-card h4 {
-  margin-top: 0;
-}
 .service-card ion-icon {
   --ionicon-stroke-width: 10px;
   font-size: 128px;
@@ -636,6 +652,30 @@ section.carousel .carousel-item > div {
 
 #services-2 {
   color: white;
+}
+#services-2 .service-card h4 {
+  margin-top: 0;
+}
+
+
+#services-2 .service-card{
+  opacity: 0;
+  transition-duration: 500ms;
+  --base-delay: 300ms;
+}
+#services-2 .service-card:nth-child(2){
+  transition-delay: calc(var(--base-delay) * 1);
+}
+#services-2 .service-card:nth-child(3){
+  transition-delay: calc(var(--base-delay) * 2);
+}
+#services-2 .service-card:nth-child(4){
+  transition-delay: calc(var(--base-delay) * 3);
+}
+
+#services-2.entered .service-card{
+  opacity: 1;
+  top: 0;
 }
 
 .parallax {
@@ -844,9 +884,29 @@ section.footer{
 .stat-label{
   margin: 0;
   color: white;
+  text-transform: uppercase;
 }
 
 /* ---- Choose us section ---- */
+#choose-us-section .choose-us-card{
+  opacity: 0;
+  transition: opacity 500ms;
+  --base-delay: 300ms;
+}
+#choose-us-section.entered .choose-us-card{
+  opacity: 1;
+}
+#choose-us-section .choose-us-card:nth-child(2){
+  transition-delay: calc(var(--base-delay) * 1);
+}
+#choose-us-section .choose-us-card:nth-child(3){
+  transition-delay: calc(var(--base-delay) * 2);
+}
+#choose-us-section .choose-us-card:nth-child(4){
+  transition-delay: calc(var(--base-delay) * 3);
+}
+
+
 .choose-us-card ion-icon{
   font-size: 80px;
   --ionicon-stroke-width: 15px;
@@ -875,6 +935,7 @@ section.footer{
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
+  transform: scale(1);
 }
 #testimonials-carousel h5{
   max-width: 500px;
