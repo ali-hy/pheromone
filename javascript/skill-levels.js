@@ -92,7 +92,7 @@ function skillLevelDraw(timestamp) {
   circles.forEach(drawCircle);
   currentPercentages.forEach((value, i) =>{
     if(currentPercentages[i] < maxPercentages[i]){
-      currentPercentages[i] = value + 1/4;
+      currentPercentages[i] = value + 1/2;
       window.requestAnimationFrame(skillLevelDraw);
     }
   })

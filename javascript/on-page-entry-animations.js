@@ -56,8 +56,9 @@ function updateStatNumberDivs(){
 let statsTimestampData = {
   start: undefined,
   previousTimeStamp: undefined,
-  maxTime: 5000,
+  maxTime: 2000,
 };
+
 function statsDraw(timestamp){
   if(statsTimestampData.start === undefined){
     statsTimestampData.start = timestamp;
