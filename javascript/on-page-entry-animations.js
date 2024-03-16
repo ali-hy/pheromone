@@ -1,5 +1,5 @@
 /**
- * @param {IntersectionObserverEntry} entry 
+ * @param {IntersectionObserverEntry} entry
  */
 function revealEntry(entry){
   entry.target.classList.add('entered');
@@ -26,7 +26,6 @@ document.querySelectorAll(".animate-on-entry").forEach((element) => {
 })
 
 //---- Stat Animation ----
-// TODO: make animation class that uses window.requestAnimationFrames();
 const maxStats = [];
 const currentStats = [];
 const statNumberDivs = document.querySelectorAll("#stats-section .stat-number");
@@ -63,7 +62,7 @@ function statsDraw(timestamp){
   if(statsTimestampData.start === undefined){
     statsTimestampData.start = timestamp;
   }
-  if(statsTimestampData.previousTimeStamp === timestamp) 
+  if(statsTimestampData.previousTimeStamp === timestamp)
     return;
 
   const elapsed = timestamp - statsTimestampData.start;

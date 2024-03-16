@@ -8,7 +8,7 @@ const currentPercentages = [];
 const ctxs = [];
 
 /**
- * @param {HTMLDivElement} circle 
+ * @param {HTMLDivElement} circle
  */
 const getCtxFromCircle = circle => {
   const canvas = circle.querySelector("canvas");
@@ -16,7 +16,7 @@ const getCtxFromCircle = circle => {
 }
 
 /**
- * @param {CanvasRenderingContext2D} ctx 
+ * @param {CanvasRenderingContext2D} ctx
  */
 const drawLightCircle = ctx => {
   let startAngle = Math.PI * 1.5;
@@ -30,8 +30,8 @@ const drawLightCircle = ctx => {
 }
 
 /**
- * @param {CanvasRenderingContext2D} ctx 
- * @param {number} percentage 
+ * @param {CanvasRenderingContext2D} ctx
+ * @param {number} percentage
  */
 const drawPercentageArc = (ctx, percentage) => {
   let startAngle = Math.PI * 1.5;
@@ -44,7 +44,7 @@ const drawPercentageArc = (ctx, percentage) => {
 }
 
 /**
- * @param {HTMLDivElement} circle 
+ * @param {HTMLDivElement} circle
  * @param {number} index
  */
 const drawCircle = (circle, index) => {
@@ -63,17 +63,18 @@ const drawCircle = (circle, index) => {
 }
 
 /**
- * @param {HTMLDivElement} circle 
+ * @param {HTMLDivElement} circle
  */
 const updatePercentageSpan = (circle, index) => {
   /**
- * @param {HTMLDivElement} circle 
+ * @param {HTMLDivElement} circle
  */
   const getSpanFromCircle = (circle) => {
     return circle.querySelector("span");
   }
+
   const span = getSpanFromCircle(circle);
-  span.innerText = Math.round(currentPercentages[index] * 10)/10;
+  span.innerText = (Math.round(currentPercentages[index] * 10)/10).toFixed(0);
 }
 
 const skillLevelTimestampData = {
@@ -84,7 +85,7 @@ function skillLevelDraw(timestamp) {
   if(skillLevelTimestampData.start === undefined){
     skillLevelTimestampData.start = timestamp;
   }
-  
+
   if(timestamp === skillLevelTimestampData.previousTimestamp){
     window.requestAnimationFrame(skillLevelDraw);
     return;
@@ -101,7 +102,7 @@ function skillLevelDraw(timestamp) {
 }
 
 /**
- * @param {HTMLDivElement} circle 
+ * @param {HTMLDivElement} circle
  */
 const initPercentageSpan = (circle) => {
   /**
@@ -114,7 +115,7 @@ const initPercentageSpan = (circle) => {
 }
 
 /**
- * @param {HTMLDivElement} circle 
+ * @param {HTMLDivElement} circle
  */
 function initCircle(circle) {
   maxPercentages.push(circle.dataset.skillLevel);
